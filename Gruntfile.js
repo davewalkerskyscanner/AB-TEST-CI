@@ -39,13 +39,22 @@ module.exports = function(grunt) {
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint', 'qunit']
+    },       
+    connect : {
+            server : {
+                options : {
+                    port : 8081,
+                    base : '.'
+                }
+            }
     },
     jasmine: {
       pivotal: {
-            lib: 'src/**/*.js',
+            src: 'lib/*.js',
             options: {
                 specs: 'spec/*Spec.js',
-                helpers: 'spec/*Helper.js'
+                helpers: 'spec/*Helper.js',
+                keepRunner: true
             }
         }
     }
@@ -53,12 +62,16 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-jasmine');
 	
   grunt.registerTask('test', ['jshint', 'qunit']);
+  grunt.registerTask('server', [
+    'connect:server:keepalive'
+  ]);
 
   grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
   // Travis CI task.
