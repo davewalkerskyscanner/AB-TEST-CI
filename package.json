@@ -31,7 +31,8 @@
       "grunt-contrib-watch": "~0.6.1",
       "grunt-contrib-concat": "~0.4.0",
       "grunt-contrib-livereload": "~0.1.2",
-      "grunt-regarde": "~0.1.1"
+      "grunt-regarde": "~0.1.1",
+      "grunt-contrib-jasmine": "^0.6.5"
    },
    "scripts": {
 	  "test": "grunt travis --verbose"
