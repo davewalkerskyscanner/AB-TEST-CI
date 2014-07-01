@@ -1,0 +1,39 @@
+{
+  "name": "AB-TEST-CI",
+  "version": "0.0.0",
+  "description": "AB-TEST-CI\r ==========",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davewalkerskyscanner/AB-TEST-CI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davewalkerskyscanner/AB-TEST-CI/issues"
+  },
+  "homepage": "https://github.com/davewalkerskyscanner/AB-TEST-CI",
+  "dependencies": {
+	  "jQuery": "~1.7.3"
+	},
+	"devDependencies": {
+	  "grunt": "~0.4.0",
+      "grunt-contrib-qunit": "~0.2.0",
+      "grunt-contrib-jshint": "~0.1.1",
+      "grunt-contrib-connect": "~0.1.2",
+      "grunt-contrib-uglify": "~0.5.0",
+      "grunt-contrib-watch": "~0.6.1",
+      "grunt-contrib-concat": "~0.4.0",
+      "grunt-contrib-livereload": "~0.1.2",
+      "grunt-regarde": "~0.1.1"
+   },
+   "scripts": {
+	  "test": "grunt travis --verbose"
+	}
+}
